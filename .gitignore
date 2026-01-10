@@ -6,6 +6,7 @@ env/
 # Python bytecode
 __pycache__/
 *.pyc
+.idea/
 
 # OS generated files
 .DS_Store

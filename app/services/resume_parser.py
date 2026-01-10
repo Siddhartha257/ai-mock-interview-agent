@@ -1,5 +1,5 @@
 from langchain_unstructured import UnstructuredLoader
-from app.validation.schema import Profile
+from models.schema import Profile
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 import os
@@ -41,5 +41,5 @@ def get_user_profile(file_path: str) -> Profile:
 
 
 if __name__ == "__main__":
-    data = get_user_profile("app/temp/siddu's resume.pdf")
+    data = get_user_profile("app/resources/siddu's resume.pdf")
     print(data.model_dump())
