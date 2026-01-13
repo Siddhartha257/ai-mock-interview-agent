@@ -1,0 +1,47 @@
+Interview Topics: ['Machine Learning Fundamentals', 'Python Programming', 'ML System Design and Deployment', 'Large Language Models (LLMs) and RAG']
+
+Alright, let's dive into the fundamentals.
+
+Great, let's start with a foundational concept. Could you explain, in your own words, what Machine Learning is and how it differs from traditional programming?
+Answer: machine learning is a art of programming where we desing a code that learns from the data and predicts the new instances by learning the underlying patterns . unlike traditional programing which is hard coded it can be used for various problems
+
+That's a good high-level overview, especially highlighting the shift from hard-coded rules to learning from data and identifying underlying patterns.
+
+Building on that, you mentioned learning from data to predict new instances. Could you elaborate on the different *types* of machine learning approaches based on how they learn from data? Perhaps give an example for each.
+Answer: in short. supervised learning : training the model with labeled data(output of training data is given) example linear regression , unsupervised learning : unlabeled data , kmeans clustering
+
+That's a concise and accurate summary of supervised and unsupervised learning, along with good examples for each. You've clearly grasped the core distinction regarding labeled versus unlabeled data.
+
+Now, building on that, are there any other major types of machine learning approaches that you're familiar with, beyond supervised and unsupervised learning?
+Answer: reinforcement learning , works by givng rewards and punishments to the agent
+
+Excellent, that's a great high-level description of reinforcement learning's core mechanism, completing the major paradigms of machine learning.
+
+Now, let's pivot a bit towards the tools we use. Python is the language of choice for much of machine learning. Can you describe some of Python's fundamental data structures, like lists, tuples, and dictionaries, and perhaps explain a scenario where you might prefer one over the other in the context of data processing for ML?
+Answer: every high level model is built using these base data structures underneeth . each has its own use cases . dict can store key-value pair , tuples cannot be changed . list can be changed
+
+That's a good summary of the core characteristics of lists, tuples, and dictionaries, especially highlighting mutability and the key-value structure of dictionaries. These fundamental structures are indeed crucial building blocks.
+
+Now, let's shift our focus from individual programming constructs to the broader picture of deploying a machine learning solution. When you think about taking a trained ML model and making it available for use in a real-world application, what are the key stages or components involved in that process? Let's call it the 'ML System Design and Deployment Lifecycle'.
+Answer: develop the model and train it multiple times with various parameters , save the best model . use pkl file and create a api end point . take the input through api , and backend will predict the output and give it to user . we can also deploy this to a cloud
+
+That's a solid outline of the core steps involved in taking a trained model and serving it, from saving the model to creating an API and considering cloud deployment.
+
+Once a model is deployed and actively serving predictions in a real-world application, what are some of the key metrics or aspects you would want to monitor to ensure its continued performance and reliability?
+Answer: not sure about those
+
+That's perfectly fine; monitoring deployed models involves a specific set of considerations that aren't always immediately obvious.
+
+Let's think about it this way: once a model is out in the wild, predicting on new, unseen data, what could potentially go wrong with its predictions over time, even if it performed well during initial testing? What factors might cause its performance to degrade?
+Answer: it can be the type of the data , scaling , etc
+
+Okay, "type of the data" is a good point, often leading to concepts like data drift or concept drift, which are indeed critical.
+
+Now, let's shift gears to our main topic: Large Language Models (LLMs). Can you explain what a Large Language Model is, in your own words, and what makes them "large"?
+Answer: it is trained on billions and trillions of data . thats why we call them large .
+
+FINAL RESULT STORED
+
+[Chat(question="Alright, let's dive into the fundamentals.\n\nGreat, let's start with a foundational concept. Could you explain, in your own words, what Machine Learning is and how it differs from traditional programming?", answer='machine learning is a art of programming where we desing a code that learns from the data and predicts the new instances by learning the underlying patterns . unlike traditional programing which is hard coded it can be used for various problems'), Chat(question="That's a good high-level overview, especially highlighting the shift from hard-coded rules to learning from data and identifying underlying patterns.\n\nBuilding on that, you mentioned learning from data to predict new instances. Could you elaborate on the different *types* of machine learning approaches based on how they learn from data? Perhaps give an example for each.", answer='in short. supervised learning : training the model with labeled data(output of training data is given) example linear regression , unsupervised learning : unlabeled data , kmeans clustering'), Chat(question="That's a concise and accurate summary of supervised and unsupervised learning, along with good examples for each. You've clearly grasped the core distinction regarding labeled versus unlabeled data.\n\nNow, building on that, are there any other major types of machine learning approaches that you're familiar with, beyond supervised and unsupervised learning?", answer='reinforcement learning , works by givng rewards and punishments to the agent'), Chat(question="Excellent, that's a great high-level description of reinforcement learning's core mechanism, completing the major paradigms of machine learning.\n\nNow, let's pivot a bit towards the tools we use. Python is the language of choice for much of machine learning. Can you describe some of Python's fundamental data structures, like lists, tuples, and dictionaries, and perhaps explain a scenario where you might prefer one over the other in the context of data processing for ML?", answer='every high level model is built using these base data structures underneeth . each has its own use cases . dict can store key-value pair , tuples cannot be changed . list can be changed'), Chat(question="That's a good summary of the core characteristics of lists, tuples, and dictionaries, especially highlighting mutability and the key-value structure of dictionaries. These fundamental structures are indeed crucial building blocks.\n\nNow, let's shift our focus from individual programming constructs to the broader picture of deploying a machine learning solution. When you think about taking a trained ML model and making it available for use in a real-world application, what are the key stages or components involved in that process? Let's call it the 'ML System Design and Deployment Lifecycle'.", answer='develop the model and train it multiple times with various parameters , save the best model . use pkl file and create a api end point . take the input through api , and backend will predict the output and give it to user . we can also deploy this to a cloud'), Chat(question="That's a solid outline of the core steps involved in taking a trained model and serving it, from saving the model to creating an API and considering cloud deployment.\n\nOnce a model is deployed and actively serving predictions in a real-world application, what are some of the key metrics or aspects you would want to monitor to ensure its continued performance and reliability?", answer='not sure about those'), Chat(question="That's perfectly fine; monitoring deployed models involves a specific set of considerations that aren't always immediately obvious.\n\nLet's think about it this way: once a model is out in the wild, predicting on new, unseen data, what could potentially go wrong with its predictions over time, even if it performed well during initial testing? What factors might cause its performance to degrade?", answer='it can be the type of the data , scaling , etc'), Chat(question='Okay, "type of the data" is a good point, often leading to concepts like data drift or concept drift, which are indeed critical.\n\nNow, let\'s shift gears to our main topic: Large Language Models (LLMs). Can you explain what a Large Language Model is, in your own words, and what makes them "large"?', answer='it is trained on billions and trillions of data . thats why we call them large .')]
+
+Process finished with exit code 0

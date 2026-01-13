@@ -15,8 +15,8 @@ class Projects(BaseModel):
 class Education(BaseModel):
     degree: str
     college: str
-    year: Optional[str]  
-    cgpa: Optional[str]  
+    year: Optional[str]
+    cgpa: Optional[str]
 
 class Profile(BaseModel):
     name: str
@@ -46,5 +46,14 @@ class SkillMatch(BaseModel):
 class ScoreFormat(BaseModel):
     matches: List[SkillMatch]
     final_score: float = Field(description="Weighted match score between 0 and 1")
+
+
+#Interview Schema
+class Chat(BaseModel):
+    question: str
+    answer: str
+
+class TopicsFormat(BaseModel):
+    topics: List[str]
 
 
