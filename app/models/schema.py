@@ -1,5 +1,5 @@
 from pydantic import BaseModel , Field
-from typing import List,Optional
+from typing import List,Optional ,Dict
 
 #Schemas for user profile
 class Work(BaseModel):
@@ -55,5 +55,13 @@ class Chat(BaseModel):
 
 class TopicsFormat(BaseModel):
     topics: List[str]
+
+class EvaluateFormat(BaseModel):
+    topic_scores: Dict[str, int] = Field(description="Scores for each implied topic, rating 1–5 based on answers")
+    strengths: List[str] = Field(description="Top strengths shown in interview answers")
+    weaknesses: List[str] = Field(description="Weak areas or unclear concepts from the interview")
+    final_score: int = Field(description="Overall interview performance score (1 weak → 5 excellent)")
+    recommendation: str = Field(description="Hiring decision: hire / maybe / no-hire")
+    summary: str = Field(description="Short paragraph summarizing interview performance")
 
 
