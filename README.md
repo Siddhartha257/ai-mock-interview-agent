@@ -85,7 +85,6 @@ This project delivers a complete AI-powered interview platform that:
 - Evaluates answer quality
 - Dynamically generates follow-up questions
 - Adjusts difficulty based on performance
-- Early termination for excellent/weak candidates
 
 **Implementation:**
 Uses LangGraph pause/resume pattern for stateful conversations.
