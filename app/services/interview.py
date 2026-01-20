@@ -26,6 +26,10 @@ def generate_topics(user_profile, job_profile):
     output = structured_llm.invoke(prompt)
     return output.topics
 
+def get_answer(topic, question):
+    ans = input()
+    return ans
+
 
 def run_interview(user_profile, job_profile):
     llm = ChatGoogleGenerativeAI(
@@ -37,7 +41,11 @@ def run_interview(user_profile, job_profile):
     topics = generate_topics(user_profile, job_profile)
     print("\nInterview Topics:", topics)
 
-    history = ""
+    history = {
+        "topic":"",
+        "question": "",
+        "answer": ""
+    }
     all_chats = []
 
     for topic in topics:
@@ -51,10 +59,14 @@ def run_interview(user_profile, job_profile):
             )
             question = llm.invoke(ask_prompt).content.strip()
             print(f"\n{question}")
-            ans = input("Answer: ").strip()
+            ans = get_answer(topic, question)
 
             all_chats.append(Chat(question=question, answer=ans))
-            history = f"[{topic}] Q: {question}\nA: {ans}\n"
+
+            history["topic"] = topic
+            history["question"] = question
+            history["answer"] = ans
+
     return all_chats
 
 if __name__ == "__main__":
