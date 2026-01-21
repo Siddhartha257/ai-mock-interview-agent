@@ -43,5 +43,5 @@ def get_job_profile(file_path: str) -> JDFormat:
     """
 
     # Returns the JDFormat Pydantic object
-    result: JDFormat = structured_llm.invoke(prompt)
+    result = structured_llm.invoke(prompt)
     return result

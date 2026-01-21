@@ -27,19 +27,20 @@ model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 def profile_to_text(profile):
     parts = []
 
-    parts.append(profile['summary'])
+    # Using dot notation for Pydantic attributes
+    parts.append(profile.summary)
 
     # projects titles + descriptions
-    for p in profile['projects']:
-        parts.append(p['title'])
-        parts.extend(p['description'])
+    for p in profile.projects:
+        parts.append(p.title)
+        # Assuming description is a list of strings
+        parts.extend(p.description)
 
     # work experience
-        # company + description
-    for w in profile['work_experience']:
-        parts.append(w['company'])
-        parts.append(w['duration'])
-        parts.extend(w['description'])
+    for w in profile.work_experience:
+        parts.append(w.company)
+        parts.append(w.duration)
+        parts.extend(w.description)
 
     return ' '.join(parts)
 
