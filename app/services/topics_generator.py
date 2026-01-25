@@ -7,14 +7,14 @@ load_dotenv()
 
 def generate_topics(user_profile, job_profile):
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
+        model="gemini-2.5-flash-lite",
         temperature=0.3,
         google_api_key=os.getenv("GOOGLE_API_KEY")
     )
     structured_llm = llm.with_structured_output(TopicsFormat)
     prompt = (
         "You are a senior technical interviewer.\n"
-        "From the following structured details, extract EXACTLY 1 relevant "
+        "From the following structured details, extract EXACTLY 4 relevant "
         "technical interview topics.\n"
         f"User Summary: {user_profile.summary}\n"
         f"User Skills: {', '.join(user_profile.skills)}\n"

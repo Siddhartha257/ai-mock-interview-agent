@@ -64,4 +64,5 @@ class EvaluateFormat(BaseModel):
     recommendation: str = Field(description="Hiring decision: hire / maybe / no-hire")
     summary: str = Field(description="Short paragraph summarizing interview performance")
 
-
+class QuestionFormat(BaseModel):
+    output: str

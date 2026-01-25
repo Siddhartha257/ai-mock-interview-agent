@@ -97,6 +97,6 @@ def get_resume_score(user_profile, job_profile_text, user_skills, job_skills):
     # Calculate Structured Skill Match (Technical)
     skills_score = get_matched_skills(job_skills, user_skills)
 
-    # Hybrid Score: 40% Context, 60% Skills
-    final_score = (sim * 0.4) + (skills_score * 0.6)
-    return round(final_score, 4)
+    # Hybrid Score: 50% Context, 50% Skills
+    final_score = (sim * 0.5) + (skills_score * 0.5)
+    return round(final_score, 2)

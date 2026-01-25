@@ -42,7 +42,7 @@ def resume_screening(state: State):
     return{'resume_score':get_resume_score(state.user_profile ,state.job_profile.summary ,state.user_profile.skills,state.job_profile.skills)}
 
 def interview_condition(state: State):
-    if state.resume_score > 0.1:
+    if state.resume_score >=0.4:
         return True
     else:
         return False
@@ -67,35 +67,49 @@ def topics_node(state: State):
 
 
 def question_node(state: State):
+    # Ensure question_count is not None
+    current_count = state.question_count if state.question_count is not None else 0
+    
     # Call your service
     result = generate_question(
         state.topics,
         state.current_topic_index,
         state.chats,
-        state.question_count
+        current_count
     )
 
-    # Debug: Print result to see its actual structure
-    # print(f"DEBUG Result: {result}")
-
-    # Handle both Object and Dictionary formats
-    if hasattr(result, 'question'):
+    # Handle the response from generate_question
+    # It returns: {"last_question": str, "question_count": int}
+    if isinstance(result, dict):
+        if 'last_question' in result:
+            q_text = result['last_question']
+        elif 'question' in result:
+            q_text = result['question']
+        elif 'output' in result:
+            q_text = result['output']
+        else:
+            q_text = str(result)
+    elif hasattr(result, 'last_question'):
+        q_text = result.last_question
+    elif hasattr(result, 'question'):
         q_text = result.question
-    elif isinstance(result, dict) and 'question' in result:
-        q_text = result['question']
+    elif hasattr(result, 'output'):
+        q_text = result.output
     else:
         # Fallback if result is just the string itself
         q_text = str(result)
 
     return {
         "last_question": q_text,
-        "question_count": state.question_count + 1
+        "question_count": current_count + 1
     }
 
 def interview_router(state: State):
-    if state.question_count >= 2:
+    current_count = state.question_count if state.question_count is not None else 0
+    if current_count >= 2:
         # Stop looping if we've hit the end of the topics list
-        if state.current_topic_index >= len(state.topics) - 1:
+        current_index = state.current_topic_index if state.current_topic_index is not None else 0
+        if current_index >= len(state.topics) - 1:
             return "finish"
         return "next_topic"
     return "ask_again"
